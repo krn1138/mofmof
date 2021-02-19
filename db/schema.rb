@@ -16,11 +16,13 @@ ActiveRecord::Schema.define(version: 2021_02_18_025410) do
     t.string "route_name"
     t.string "station_name"
     t.string "minutes"
+    t.integer "property_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_nearest_stations_on_property_id"
   end
 
-  create_table "propreties", force: :cascade do |t|
+  create_table "properties", force: :cascade do |t|
     t.string "house_name"
     t.string "rent_money"
     t.text "address"
